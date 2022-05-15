@@ -61,6 +61,15 @@ git clone to push step by step->
 6.git push origin "branch name"
 
 
+echo "# ReactJs" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/akazad7567/ReactJs.git
+git push -u origin main
+
+
 
 
 
