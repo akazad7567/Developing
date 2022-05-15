@@ -1,0 +1,87 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mongodb:
+memberExists = await BlocMemberModel.findById(id);
+if(!mongoose.Types.ObjectId.isValid(id)) return false;// check validation
+return UserModel.findOneAndUpdate({_id: id, STATUS});
+
+join two table-> 
+ const MapModel = mongoose.model(
+  "maps",
+  new mongoose.Schema({EmpireModel: [{ type: mongoose.Schema.Types.ObjectId, ref: 'empires' }]}, { strict: false, timestamps: true }) 
+);
+ const mapInfo = await MapModel.findOne({"owner": {userId: id}}).populate('EmpireModel');
+
+R object idr jonno eita use koren
+const ObjectId = require('mongoose').Types.ObjectId
+{_id: ObjectId(empireId), {owner: {id: ObjectId(userId)}}
+
+sample:
+const ObjectId = require('mongoose').Types.ObjectId
+exports.getFirstEmpireId= async (id) => {
+  const empireInfo = await EmpireModel.findOne({"owner.id":ObjectId(id)}).populate('UserModel');
+  console.log("empireId", empireInfo);
+  return empireInfo._id;
+ }
+
+
+
+
+
+
+
+
+Git:
+branch update->git clone -b my-branch git@github.com:user/myproject.git
+commit file by file-> git commit -m "message" ./file name
+
+git clone to push step by step->
+1.git cd "directory on pc"
+2.git clone "clone url"
+3.creating new branch-> git checkout -b "branch name"
+4.staged to push-> git add .
+5.commit file by file-> git commit -m "message" ./file name
+6.git push origin "branch name"
+
+
+
+
+
+
+react:
+npm uninstall -g create-react-app
+npx create-react-app myreact
+
+mui:
+npm install @mui/icons-material
+
+
+redux:
+npm install redux react-redux
+
+
+
+
+
+
+
+
+javascript:
+availableUnits.slice(0, 2).map((item, indx) => (   //show first two data
